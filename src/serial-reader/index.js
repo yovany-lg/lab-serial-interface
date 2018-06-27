@@ -1,7 +1,7 @@
 var SerialPort = require('serialport');
-const Led = require('robotois-ws2811');
+// const Led = require('robotois-ws2811');
 
-const led = new Led(1, 1, 64, 1);
+// const led = new Led(1, 1, 64, 1);
 const colors = {
   primary: '#00d1b2',
   link: '#3273dc',
@@ -13,7 +13,7 @@ const colors = {
 let ledTimeout = false;
 let port;
 
-const init = (recordCreator) => {
+const init = (recordCreator, serverRecordCreator) => {
   let frameParts = '';
   let frame;
 
@@ -22,13 +22,13 @@ const init = (recordCreator) => {
       return console.log('Error: ', err.message);
     }
     console.log('Serial port ready');
-    led.turnOn(colors.success);
+    // led.turnOn(colors.success);
   });
   port.on('data', function (data) {
-    led.blink(colors.info);
+    // led.blink(colors.info);
     if(!ledTimeout) {
       ledTimeout = setTimeout(() => {
-        led.turnOn(colors.success);
+        // led.turnOn(colors.success);
         clearTimeout(ledTimeout);
         ledTimeout = false;
       }, 5000);
@@ -38,6 +38,7 @@ const init = (recordCreator) => {
       const lasFragment = str.split('\r');
       frame = frameParts.concat(lasFragment[0]);
       recordCreator(frame);
+      serverRecordCreator(frame);
       // .then(() => {
       //   led.turnOn(colors.success);
       // });
@@ -50,7 +51,7 @@ const init = (recordCreator) => {
 };
 
 process.on('exit', () => {
-  led.turnOff();
+  // led.turnOff();
   port.close();
   process.exit();
 });

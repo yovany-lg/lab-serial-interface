@@ -18,7 +18,7 @@ const testResults = (frame) => ({
   cetona: `${frame[19]} ${frame[20]}`.trim(),
   densidad: `${frame[22]} ${frame[23]}`.trim(),
   sangre: `${frame[25]} ${frame[26]}`.trim(),
-  ph: `${frame[28]} ${frame[26]}`.trim(),
+  ph: `${frame[28]} ${frame[29]}`.trim(),
   proteina: `${frame[31]} ${frame[32]}`.trim(),
   urobilinogeno: `${frame[34]} ${frame[35]}`.trim(),
   nitritos: `${frame[37]} ${frame[38]}`.trim(),
