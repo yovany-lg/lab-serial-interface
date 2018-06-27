@@ -1,0 +1,17 @@
+[Unit]
+Description=Clinitek Server and Serial reader
+Wants=mysql.service
+
+[Service]
+User=root
+WorkingDirectory=/home/pi/clinitek-serial
+ExecStart=/usr/local/bin/node src/index.js
+Restart=always
+RestartSec=5
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=clinitek-server
+#Environment=NODE_ENV=production PORT=1337
+
+[Install]
+WantedBy=multi-user.target
