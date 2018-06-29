@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const record = require('./model');
-const parser = require('./parser');
+const parser = require('../data-parser/parser');
 
 const sequelize = new Sequelize('interfaces', 'admin', 'yovanylg', {
   dialect: 'mysql',

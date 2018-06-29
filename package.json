@@ -16,7 +16,8 @@
     "robotois-digital-io": "^1.0.1",
     "robotois-ws2811": "^1.0.1",
     "sequelize": "^4.38.0",
-    "serialport": "^6.2.0"
+    "serialport": "^6.2.0",
+    "underscore": "^1.9.1"
   },
   "devDependencies": {
     "eslint": "^4.19.1"

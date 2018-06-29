@@ -1,4 +1,3 @@
-const recordCreator = require('./record-creator');
 const serverRecordCreator = require('./server-record-creator');
 const serialReader = require('./serial-reader');
 const digitalIO = require('robotois-digital-io');
@@ -10,4 +9,4 @@ button.addFunction((secs, ms) => (secs >= 1), () => {
    command('sudo shutdown -h now');
 });
 
-serialReader(recordCreator, serverRecordCreator);
+serialReader(serverRecordCreator);

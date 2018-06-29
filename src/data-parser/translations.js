@@ -1,0 +1,17 @@
+module.exports = {
+  WBC: 'Leucocitos',
+  RBC: 'Eritrocitos',
+  HGB: 'Hemoglobina',
+  HCT: 'Hematocrito',
+  MCV: 'VCM',
+  MCH: 'HCM',
+  MCHC: 'CMHC',
+  PLT: 'Plaquetas',
+  'RDW-CV': 'RDW',
+  MPV: 'VPM',
+  NEUT: 'Neutrofilos',
+  LYMPH: 'Linfocitos',
+  MONO: 'Monocitos',
+  EO: 'Eosinofilos',
+  BASO: 'Basofilos',
+};

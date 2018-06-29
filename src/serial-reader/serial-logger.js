@@ -1,7 +1,7 @@
 const SerialPort = require('serialport');
 const fs = require('fs');
 
-var port = new SerialPort('/dev/serial0', function (err) {
+var port = new SerialPort('/dev/serial0', { baudRate: 19200 }, function (err) {
   if (err) {
     return console.log('Error: ', err.message);
   }
@@ -29,7 +29,7 @@ port.write('Serial port running', function(err) {
 port.on('data', function (data) {
   // const data = port.read();
   const str = data.toString();
-  console.log('Serial Data:', str);
+  console.log('Serial Data:', data);
   fs.appendFile('serial-logger.txt', data, (err) => {
     if (err) throw err;
     // console.log(`[Serial] -> New data ${data}`);
